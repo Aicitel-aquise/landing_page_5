@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintonía Urbana | Proyecto Música - INS-600</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --primary-dark: #4b0082;
+            --accent: #00f2fe;
+            --bg-dark: #0f0c20;
+            --card-bg: #1a1638;
+            --text-light: #f4f4f9;
+            --text-muted: #a0a0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 8%;
+            background: rgba(15, 12, 32, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.25) 0%, rgba(15, 12, 32, 1) 70%);
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #ffffff 0%, #b0b0d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 242, 254, 0.4);
+        }
+
+        /* Section Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        /* Genres Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Player Preview Section */
+        .player-preview {
+            background: linear-gradient(135deg, rgba(26, 22, 56, 0.8), rgba(75, 0, 130, 0.3));
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+        }
+
+        .player-info h4 {
+            font-size: 1.5rem;
+        }
+
+        .player-info p {
+            color: var(--text-muted);
+        }
+
+        .audio-mock {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #090714;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            nav {
+                display: none; /* Simplificado para móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">MusicSpace</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#generos">Géneros</a></li>
+                <li><a href="#destacado">Destacado</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>El Arte del Sonido en una Sola Experiencia</h1>
+            <p>Proyecto de exploración musical desarrollado para la materia INS-600. Una inmersión visual y auditiva moderna.</p>
+            <a href="#generos" class="btn">Explorar Ritmos</a>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <main class="container">
+        <h2 id="generos" class="section-title">Géneros <span>Destacados</span></h2>
+        
+        <div class="grid">
+            <article class="card">
+                <div class="card-icon">🎧</div>
+                <h3>Electrónica & Synth</h3>
+                <p>Texturas sintetizadas, ritmos envolventes y frecuencias graves diseñadas para la concentración y el ritmo continuo.</p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🎸</div>
+                <h3>Rock Alternativo</h3>
+                <p>Guitarras distorsionadas, baterías potentes y letras expresivas que definieron generaciones completas.</p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🎷</div>
+                <h3>Jazz & Lo-Fi</h3>
+                <p>Armonías complejas, improvisación fluida y beats suaves ideales para momentos de estudio o tranquilidad.</p>
+            </article>
+        </div>
+
+        <!-- Reproductor / Reproducción simulada -->
+        <div id="destacado" class="player-preview">
+            <div class="player-info">
+                <h4>Pista del Día: Resonancia Espacial</h4>
+                <p>Composición Instrumental — INS-600 Audio Lab</p>
+            </div>
+            <div class="audio-mock">
+                <audio controls style="width: 100%;">
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Proyecto Música — INS-600. Desarrollado por Leticia Aquise Taco.</p>
+    </footer>
+
+</body>
+</html>
