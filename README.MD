@@ -1,21 +1,33 @@
-# Frecuencia Estudio | Productora musical
+# 🎵 Frecuencia Estudio | Productora musical
 
-Landing page académica para una productora y sello musical independiente. Presenta artistas, lanzamientos, eventos, sesiones de estudio y enlaces sociales. Los nombres y eventos son contenido demostrativo.
+![Frecuencia Estudio Banner](https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop)
 
-## Integrantes
-- Paula Alvarez
-- Leticia Aquise
-- Angela Mamani
+> Landing page académica interactiva para una productora y sello musical independiente. Presenta catálogo de artistas destacados, últimos lanzamientos discográficos, agenda de eventos, reserva de sesiones de grabación y enlaces a redes sociales. *(Nota: Los nombres de artistas y eventos son de carácter demostrativo).*
 
-## Docente
-Lic. Erik Huallpa
+---
 
-## Tecnologías
-- HTML5 semántico
-- CSS3 embebido (Grid, Flexbox y media queries)
+## 👥 Integrantes
+* **Paula Alvarez**
+* **Leticia Aquise**
+* **Angela Mamani**
 
-## Cómo visualizarlo
-Abre `index.html` directamente en un navegador. Las fotografías y tipografías se cargan desde servicios externos, por lo que requieren conexión a Internet.
+## 👨‍🏫 Docente
+* **Lic. Erik Huallpa**
 
-## Fecha
-29 de octubre de 2026
+---
+
+## 🛠️ Tecnologías Utilizadas
+* **HTML5 Semántico:** Estructura de contenido accesible y organizada.
+* **CSS3 Embebido:** Diseño responsivo adaptado mediante **Grid**, **Flexbox** y **Media Queries**.
+
+---
+
+## 🚀 Cómo Visualizar el Proyecto
+1. Clona o descarga el repositorio en tu equipo local.
+2. Abre el archivo `index.html` directamente en tu navegador web.
+> ⚠️ **Nota:** Requiere conexión a Internet para cargar las tipografías de Google Fonts e imágenes externas desde Unsplash.
+
+---
+
+## 📅 Fecha
+* **29 de octubre de 2026**
